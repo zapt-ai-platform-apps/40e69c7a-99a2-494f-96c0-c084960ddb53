@@ -1,35 +1,53 @@
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx}"
-  ],
+  content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f8f9ff',
-          100: '#eef1ff',
-          200: '#dde2ff',
-          300: '#c3caff',
-          400: '#9fa9ff',
-          500: '#7986ff',
-          600: '#5464ff',
-          700: '#2f43ff',
-          800: '#0a23ff',
-          900: '#0011d6',
+        cyan: {
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
         },
-      },
-      fontFamily: {
-        heading: ['"Figtree"', 'system-ui'],
-        body: ['"Inter"', 'sans-serif'],
+        indigo: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+        },
+        violet: {
+          50: '#f5f3ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#8b5cf6',
+          600: '#7c3aed',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+        }
       },
       animation: {
-        float: 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pan': 'pan 30s linear infinite',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
+        pan: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '100%': { backgroundPosition: '100% 100%' },
         }
       }
     },
