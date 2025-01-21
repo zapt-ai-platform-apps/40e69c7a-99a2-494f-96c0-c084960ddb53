@@ -26,10 +26,10 @@ export default function LandingPage() {
         </p>
 
         <button
-          className="bg-white text-teal-700 font-semibold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:bg-gray-100 hover:-translate-y-1 transform transition duration-300"
-          onClick={() => alert('Explore the app!')}
+          className="bg-white text-teal-700 font-semibold px-10 py-4 rounded-full shadow-xl hover:shadow-2xl hover:bg-gray-100 hover:-translate-y-1 transform transition duration-300 cursor-pointer"
+          onClick={() => navigate('/login')}
         >
-          Explore the App
+          Sign In
         </button>
       </div>
     </div>
