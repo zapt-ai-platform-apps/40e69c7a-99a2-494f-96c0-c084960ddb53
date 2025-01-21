@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ensure text color is defined globally */
+/* Global body styles for the new design system */
 body {
-  @apply text-gray-900;
+  @apply font-body text-primary-900;
+}
+
+/* Example premium hover & focus classes */
+.premium-hover:hover {
+  @apply transition-all duration-300 transform scale-105 shadow-xl;
+}
+.premium-focus:focus {
+  outline: 2px solid theme('colors.primary.500');
+  outline-offset: 2px;
 }

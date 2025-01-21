@@ -7,7 +7,7 @@ import Dashboard from './pages/Dashboard';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 flex flex-col justify-between">
+    <div className="min-h-screen bg-primary-50 text-primary-900 font-body flex flex-col justify-between">
       <div className="h-full">
         <BrowserRouter>
           <Routes>

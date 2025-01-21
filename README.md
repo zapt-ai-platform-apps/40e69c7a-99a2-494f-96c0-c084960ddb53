@@ -26,9 +26,11 @@ The following environment variables must be defined in a file named ".env" at th
 ## What This App Does
 
 1. Provides a landing page describing the app's purpose.
-2. Allows users to log in or sign up (for demo purposes, this uses local storage).
-3. Lets users add daily calorie entries in a Dashboard section.
+2. Allows users to log in or sign up, powered by Supabase Auth.
+3. Lets users add daily calorie entries in a Dashboard section, storing data in local storage.
 
 ## Made on ZAPT
 
-A "Made on ZAPT" badge is included in this app's interface, which links to https://www.zapt.ai.
+A "Made on ZAPT" badge is included in this app's interface, which links to https://www.zapt.ai. This badge is always visible.
+
+Note: We have recently transformed the design system to a more premium style with a new color palette, typography, and interactive hover/focus states.

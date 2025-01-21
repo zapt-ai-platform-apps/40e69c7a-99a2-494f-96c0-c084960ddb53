@@ -14,28 +14,44 @@ export default function Dashboard() {
 
   React.useEffect(() => {
     checkSession();
-  }, [checkSession]);
+    loadEntries();
+  }, [checkSession, loadEntries]);
+
+  // Micro-animation for calorie total changes (optional, minimal demonstration)
+  const [prevTotal, setPrevTotal] = useState(0);
+  React.useEffect(() => {
+    const currentTotal = totalCalories(entries);
+    if (currentTotal !== prevTotal) {
+      setPrevTotal(currentTotal);
+    }
+  }, [entries, prevTotal]);
 
   return (
     <div className="h-full flex flex-col items-center p-4">
-      <div className="flex justify-end w-full max-w-md">
+      <div className="flex justify-end w-full max-w-md mb-4">
         <button 
           onClick={handleLogout} 
-          className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md font-medium shadow transition-all duration-200"
+          className="cursor-pointer bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl font-medium shadow transition-all duration-200"
         >
           Sign Out
         </button>
       </div>
-      <h2 className="text-2xl font-bold mb-4">My Dashboard</h2>
-      <AddEntryForm 
-        calorieInput={calorieInput} 
-        setCalorieInput={setCalorieInput} 
-        handleAddEntry={handleAddEntry} 
-        isSubmitting={isSubmitting} 
+      <h2 className="text-3xl font-heading mb-6">My Dashboard</h2>
+      <AddEntryForm
+        calorieInput={calorieInput}
+        setCalorieInput={setCalorieInput}
+        handleAddEntry={handleAddEntry}
+        isSubmitting={isSubmitting}
       />
-      <div className="bg-white p-4 rounded shadow w-full max-w-md">
-        <h3 className="text-xl font-semibold mb-2">Today's Calories</h3>
-        <p className="text-2xl font-bold">{totalCalories(entries)} kcal</p>
+      <div className="bg-secondary-50 p-4 rounded-xl shadow w-full max-w-md transition-all duration-200 hover:shadow-md">
+        <h3 className="text-xl font-heading mb-2">Today's Calories</h3>
+        <p
+          className={`text-3xl font-bold transition-all duration-300 ${
+            (totalCalories(entries) !== prevTotal) ? 'premium-hover' : ''
+          }`}
+        >
+          {totalCalories(entries)} kcal
+        </p>
       </div>
       <EntriesList entries={entries} />
     </div>

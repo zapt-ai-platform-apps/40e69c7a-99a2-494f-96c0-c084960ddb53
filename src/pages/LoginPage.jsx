@@ -16,8 +16,8 @@ export default function AuthPage() {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100 text-gray-900">
-      <h2 className="text-2xl font-bold mb-4">Sign in with ZAPT</h2>
+    <div className="min-h-screen bg-primary-50 text-primary-900 flex flex-col items-center justify-center p-4">
+      <h2 className="text-2xl font-heading font-bold mb-4">Sign in with ZAPT</h2>
       <Auth
         supabaseClient={supabase}
         appearance={{ theme: ThemeSupa }}
