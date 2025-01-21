@@ -7,7 +7,7 @@ export default function AddEntryForm({ calorieInput, setCalorieInput, handleAddE
         <input
           type="number"
           placeholder="Enter calories"
-          className="w-full px-6 py-4 bg-primary-50/50 backdrop-blur-sm rounded-2xl border-2 border-primary-200 focus:border-primary-400 focus:ring-2 focus:ring-primary-200/50 shadow-sm transition-all duration-300 placeholder:text-primary-400 focus:shadow-lg box-border"
+          className="w-full px-6 py-4 bg-primary-50/50 backdrop-blur-sm rounded-2xl border-2 border-primary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200/50 shadow-sm transition-all duration-300 placeholder:text-primary-400 focus:shadow-lg box-border"
           value={calorieInput}
           onChange={(e) => setCalorieInput(e.target.value)}
         />
