@@ -18,9 +18,9 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </div>
-      <footer className="p-4 text-center">
-        <a href="https://www.zapt.ai" target="_blank" rel="noopener noreferrer" className="underline">
-          Made on ZAPT
+      <footer className="p-6 text-center text-primary-500 text-sm">
+        <a href="https://www.zapt.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-700 transition-colors duration-300">
+          Crafted with care on ZAPT
         </a>
       </footer>
     </div>
