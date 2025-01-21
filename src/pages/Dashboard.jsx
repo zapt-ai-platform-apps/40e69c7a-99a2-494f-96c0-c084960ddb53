@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Sentry from '@sentry/browser';
 import AddEntryForm from '../components/AddEntryForm';
 import EntriesList from '../components/EntriesList';
+import { supabase } from '../supabaseClient';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -11,11 +12,18 @@ export default function Dashboard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-      navigate('/login');
-      return;
+    async function checkSession() {
+      const { data } = await supabase.auth.getSession();
+      if (!data?.session) {
+        navigate('/login');
+      } else {
+        loadEntries();
+      }
     }
+    checkSession();
+  }, [navigate]);
+
+  function loadEntries() {
     try {
       console.log('[Dashboard] Loading existing entries');
       const storedEntries = JSON.parse(localStorage.getItem('calorieEntries') || '[]');
@@ -24,7 +32,7 @@ export default function Dashboard() {
       console.error(error);
       Sentry.captureException(error);
     }
-  }, [navigate]);
+  }
 
   function totalCalories() {
     return entries.reduce((acc, entry) => acc + entry.calories, 0);
