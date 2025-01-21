@@ -2,6 +2,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Figtree', 'system-ui', 'sans-serif'],
+      },
       colors: {
         cyan: {
           50: '#ecfeff',
